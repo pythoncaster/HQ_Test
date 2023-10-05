@@ -26,4 +26,5 @@ class ProductsWithAccessCountView(APIView):
     def get(self, request):
         products = Product.objects.all()
         serializer = ProductWithAccessCountSerializer(products, many=True)
-        return Response({'Список продуктов с количеством пользователей, занимающихся на продукте': serializer.data})
+        return Response({'Список продуктов с количеством пользователей, занимающихся на продукте и процент '
+                         'приобретения продукта': serializer.data})
