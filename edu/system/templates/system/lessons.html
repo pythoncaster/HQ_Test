@@ -1,0 +1,22 @@
+{% extends 'system/base.html'%}
+
+{% block content %}
+<h1>{{title}}</h1>
+<h2>Информация об уроках</h2>
+
+{% block mainmenu %}
+
+{% endblock mainmenu %}
+
+<ul>
+    {% for p in posts %}
+    <li>
+        <p>Название: {{p.title}}</p>
+        <p>Описание: {{p.content}}</p>
+        <p>Продолжительность: {{p.duration_in_sec}}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
